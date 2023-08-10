@@ -1,0 +1,15 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+<section class="signup">
+                <form method="POST" class="register-form" id="register-form">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                        <input type="submit" class="btn btn-primary btn-lg" value="Register">
+                </form>
+    <br>
+                <div class="d-flex">
+                    <p>Already have account: </p>
+                    <a href="{% url 'login'%}" class="mx-2">  Log in</a>
+                </div>
+</section>
+{% endblock %}
